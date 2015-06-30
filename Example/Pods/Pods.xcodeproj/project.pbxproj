@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08D797B47D93CD3487D15C2B /* Pods-PlayingCardsExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 146725FF3235C50198ED6248 /* Pods-PlayingCardsExample-dummy.m */; };
+		1D57370AB1884CE0569AAE16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7AA389527D5D974AA8412E /* Foundation.framework */; };
+		269C919903CA21A7743537B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7AA389527D5D974AA8412E /* Foundation.framework */; };
+		26D457E0AC76D1DF772A4957 /* Pods-PlayingCardsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F291CD12DDAC483A2325B /* Pods-PlayingCardsTests-dummy.m */; };
+		2BDD769BE44AE2029711A644 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24E03E97CA8F1B319AA7E5 /* Card.swift */; };
+		368682A96485114C334B46B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7AA389527D5D974AA8412E /* Foundation.framework */; };
+		3791A0611B435D3A003D2A88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791A0601B435D3A003D2A88 /* Deck.swift */; };
+		37F639301B43491A00A0E36A /* Suite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6392F1B43491A00A0E36A /* Suite.swift */; };
+		37F639321B4349E400A0E36A /* HashUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F639311B4349E400A0E36A /* HashUtils.swift */; };
+		55056FEDF08AEE7DEB4666BC /* Pods-PlayingCardsExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EF4F14741D9C073502EDC2 /* Pods-PlayingCardsExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		571A0C2056A52BCFFE337E28 /* PlayingCardsSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BCE5AA74125EBE67C37AD6 /* PlayingCardsSwift-dummy.m */; };
+		8E9B415048D4DABB2D995365 /* PlayingCardsSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A66104C1D1043D7ABFA80195 /* PlayingCardsSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D96B8A189C00960BB1C55B28 /* Pods-PlayingCardsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C945A45B966CF7D7BA8EA1 /* Pods-PlayingCardsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E810DE8F351EF92C3EAE7625 /* PlayingCardsSwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA41B054AB17424A7CF1879B /* PlayingCardsSwift.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0ACB9A43303BBA9A4C966411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC220DEBD60693B143F4FFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA228BADA631DB950EE3E45A;
+			remoteInfo = "PlayingCards-Swift";
+		};
+		300D2488F57674983C448541 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC220DEBD60693B143F4FFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA228BADA631DB950EE3E45A;
+			remoteInfo = "PlayingCards-Swift";
+		};
+		7E23B32AF1D3FD031660A0C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC220DEBD60693B143F4FFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 989D8CF8C5016ED1E8C6B51E;
+			remoteInfo = "PlayingCards-Swift-PlayingCards-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		049E70870A8CFFD6229731EC /* Pods-PlayingCardsExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlayingCardsExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		09C945A45B966CF7D7BA8EA1 /* Pods-PlayingCardsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PlayingCardsTests-umbrella.h"; sourceTree = "<group>"; };
+		0C34B34E7D273FA18E96A303 /* Pods-PlayingCardsExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PlayingCardsExample.modulemap"; sourceTree = "<group>"; };
+		0DDD7E13864AB008F638E6A1 /* Pods-PlayingCardsExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlayingCardsExample-frameworks.sh"; sourceTree = "<group>"; };
+		146725FF3235C50198ED6248 /* Pods-PlayingCardsExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlayingCardsExample-dummy.m"; sourceTree = "<group>"; };
+		1788FDC693ED97C723F844B7 /* PlayingCardsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlayingCardsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E7C86E7922396A452186AD7 /* Pods-PlayingCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlayingCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F7AA389527D5D974AA8412E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3791A0601B435D3A003D2A88 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		37F6392F1B43491A00A0E36A /* Suite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suite.swift; sourceTree = "<group>"; };
+		37F639311B4349E400A0E36A /* HashUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashUtils.swift; sourceTree = "<group>"; };
+		3B7641EE1C6B8663386C9147 /* Pods-PlayingCardsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = "Pods-PlayingCardsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		40BCE5AA74125EBE67C37AD6 /* PlayingCardsSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PlayingCardsSwift-dummy.m"; sourceTree = "<group>"; };
+		40C3EDCC7BE139A639AB39AA /* Pods-PlayingCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlayingCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		4317F37421043126155B1450 /* Pods-PlayingCardsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlayingCardsExample.release.xcconfig"; sourceTree = "<group>"; };
+		4C6F291CD12DDAC483A2325B /* Pods-PlayingCardsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlayingCardsTests-dummy.m"; sourceTree = "<group>"; };
+		4F24E03E97CA8F1B319AA7E5 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		565D765C6696C0499E48E98A /* Pods-PlayingCardsExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = "Pods-PlayingCardsExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		58C71D4B786CD854D89B9DD8 /* Pods-PlayingCardsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlayingCardsTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5EC449A690EF1F86461CA7BE /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		607B542EFDF3106AA98833D6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		633627A341FDFA3E9C961115 /* Pods-PlayingCardsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PlayingCardsTests.modulemap"; sourceTree = "<group>"; };
+		6CCE9E27CE85454A5360F5FE /* PlayingCardsSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PlayingCardsSwift.xcconfig; sourceTree = "<group>"; };
+		6DB4E36EC43CE62567281143 /* Pods-PlayingCardsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlayingCardsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		78FEAE819AD6CB19AA241300 /* Pods_PlayingCardsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayingCardsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B25B78FF797B7999568589E /* Pods_PlayingCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayingCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD54F5AA35C4B62BB24EC90 /* Pods-PlayingCards-Swift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlayingCards-Swift_Example-resources.sh"; sourceTree = "<group>"; };
+		9E0CA3970086B610C8B58930 /* PlayingCardsSwift-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PlayingCardsSwift-Private.xcconfig"; sourceTree = "<group>"; };
+		A66104C1D1043D7ABFA80195 /* PlayingCardsSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PlayingCardsSwift-umbrella.h"; sourceTree = "<group>"; };
+		AA41B054AB17424A7CF1879B /* PlayingCardsSwift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayingCardsSwift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA027285BB8CCF57D9E04AC6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C00EA48A13C7850B71F83535 /* PlayingCardsSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PlayingCardsSwift.modulemap; sourceTree = "<group>"; };
+		CEFC58CA5BEA7390FD4A5332 /* PlayingCardsSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PlayingCardsSwift-prefix.pch"; sourceTree = "<group>"; };
+		E57CF1426704F35BCCC5AE18 /* Pods-PlayingCardsTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlayingCardsTests-frameworks.sh"; sourceTree = "<group>"; };
+		F15F3C35AC8961F01083725A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EF4F14741D9C073502EDC2 /* Pods-PlayingCardsExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PlayingCardsExample-umbrella.h"; sourceTree = "<group>"; };
+		FAFF48DAF0D7E18369838EF7 /* Pods-PlayingCardsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlayingCardsTests-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B88AF5C0177C7D67F4D0F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D57370AB1884CE0569AAE16 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D0978BAF7FE3DFD66F6272 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269C919903CA21A7743537B6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BF5EB33369D9FDBFC6AB551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368682A96485114C334B46B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E617A7740B3F01B69790A248 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19331C91A3A759692909D4C9 /* PlayingCards-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				6D9D10D9E903EB210F6D98AD /* Pod */,
+				8A69BF0258223A540ED71778 /* Support Files */,
+			);
+			name = "PlayingCards-Swift";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		2A1F052469CE35229EF49E2B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F7AA389527D5D974AA8412E /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		31A8EA90A814B2CF83FFA2D9 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19331C91A3A759692909D4C9 /* PlayingCards-Swift */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		46464454E271D1F5093C828F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA41B054AB17424A7CF1879B /* PlayingCardsSwift.bundle */,
+				1788FDC693ED97C723F844B7 /* PlayingCardsSwift.framework */,
+				78FEAE819AD6CB19AA241300 /* Pods_PlayingCardsExample.framework */,
+				8B25B78FF797B7999568589E /* Pods_PlayingCardsTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69F68E84ABEF9D1E01B11CD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A1F052469CE35229EF49E2B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D9D10D9E903EB210F6D98AD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				EF0D38F7E09F9D33BCBCFE9A /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		87440A63770D6C5F0306ABFA = {
+			isa = PBXGroup;
+			children = (
+				5EC449A690EF1F86461CA7BE /* Podfile */,
+				31A8EA90A814B2CF83FFA2D9 /* Development Pods */,
+				69F68E84ABEF9D1E01B11CD8 /* Frameworks */,
+				46464454E271D1F5093C828F /* Products */,
+				D46F6BA388FC3B8CF7F18EA5 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8A69BF0258223A540ED71778 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F15F3C35AC8961F01083725A /* Info.plist */,
+				C00EA48A13C7850B71F83535 /* PlayingCardsSwift.modulemap */,
+				6CCE9E27CE85454A5360F5FE /* PlayingCardsSwift.xcconfig */,
+				9E0CA3970086B610C8B58930 /* PlayingCardsSwift-Private.xcconfig */,
+				40BCE5AA74125EBE67C37AD6 /* PlayingCardsSwift-dummy.m */,
+				CEFC58CA5BEA7390FD4A5332 /* PlayingCardsSwift-prefix.pch */,
+				A66104C1D1043D7ABFA80195 /* PlayingCardsSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PlayingCardsSwift";
+			sourceTree = "<group>";
+		};
+		917B1D5E2DD992558480AB53 /* Pods-PlayingCardsExample */ = {
+			isa = PBXGroup;
+			children = (
+				607B542EFDF3106AA98833D6 /* Info.plist */,
+				0C34B34E7D273FA18E96A303 /* Pods-PlayingCardsExample.modulemap */,
+				565D765C6696C0499E48E98A /* Pods-PlayingCardsExample-acknowledgements.markdown */,
+				049E70870A8CFFD6229731EC /* Pods-PlayingCardsExample-acknowledgements.plist */,
+				146725FF3235C50198ED6248 /* Pods-PlayingCardsExample-dummy.m */,
+				0DDD7E13864AB008F638E6A1 /* Pods-PlayingCardsExample-frameworks.sh */,
+				9DD54F5AA35C4B62BB24EC90 /* Pods-PlayingCards-Swift_Example-resources.sh */,
+				F6EF4F14741D9C073502EDC2 /* Pods-PlayingCardsExample-umbrella.h */,
+				6DB4E36EC43CE62567281143 /* Pods-PlayingCardsExample.debug.xcconfig */,
+				4317F37421043126155B1450 /* Pods-PlayingCardsExample.release.xcconfig */,
+			);
+			name = "Pods-PlayingCardsExample";
+			path = "Target Support Files/Pods-PlayingCardsExample";
+			sourceTree = "<group>";
+		};
+		D46F6BA388FC3B8CF7F18EA5 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				917B1D5E2DD992558480AB53 /* Pods-PlayingCardsExample */,
+				FA484E1CFD7F5B889BA85CEC /* Pods-PlayingCardsTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EF0D38F7E09F9D33BCBCFE9A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4F24E03E97CA8F1B319AA7E5 /* Card.swift */,
+				3791A0601B435D3A003D2A88 /* Deck.swift */,
+				37F639311B4349E400A0E36A /* HashUtils.swift */,
+				37F6392F1B43491A00A0E36A /* Suite.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FA484E1CFD7F5B889BA85CEC /* Pods-PlayingCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA027285BB8CCF57D9E04AC6 /* Info.plist */,
+				633627A341FDFA3E9C961115 /* Pods-PlayingCardsTests.modulemap */,
+				3B7641EE1C6B8663386C9147 /* Pods-PlayingCardsTests-acknowledgements.markdown */,
+				58C71D4B786CD854D89B9DD8 /* Pods-PlayingCardsTests-acknowledgements.plist */,
+				4C6F291CD12DDAC483A2325B /* Pods-PlayingCardsTests-dummy.m */,
+				E57CF1426704F35BCCC5AE18 /* Pods-PlayingCardsTests-frameworks.sh */,
+				FAFF48DAF0D7E18369838EF7 /* Pods-PlayingCardsTests-resources.sh */,
+				09C945A45B966CF7D7BA8EA1 /* Pods-PlayingCardsTests-umbrella.h */,
+				1E7C86E7922396A452186AD7 /* Pods-PlayingCardsTests.debug.xcconfig */,
+				40C3EDCC7BE139A639AB39AA /* Pods-PlayingCardsTests.release.xcconfig */,
+			);
+			name = "Pods-PlayingCardsTests";
+			path = "Target Support Files/Pods-PlayingCardsTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		07FBCDE97F0C7DBA0982F2F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E9B415048D4DABB2D995365 /* PlayingCardsSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		214EC13137C9DE4D59BCFD8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D96B8A189C00960BB1C55B28 /* Pods-PlayingCardsTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		739DAF934EE1AE411864D7CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55056FEDF08AEE7DEB4666BC /* Pods-PlayingCardsExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		25A2B176100FD0BC8A8E54C6 /* Pods-PlayingCardsExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC39D24C12FDD15599AD6D44 /* Build configuration list for PBXNativeTarget "Pods-PlayingCardsExample" */;
+			buildPhases = (
+				5745342D7A210ADF670669AF /* Sources */,
+				6BF5EB33369D9FDBFC6AB551 /* Frameworks */,
+				739DAF934EE1AE411864D7CE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9838FF545D6732C91E6C89B /* PBXTargetDependency */,
+			);
+			name = "Pods-PlayingCardsExample";
+			productName = "Pods-PlayingCards-Swift_Example";
+			productReference = 78FEAE819AD6CB19AA241300 /* Pods_PlayingCardsExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		989D8CF8C5016ED1E8C6B51E /* PlayingCardsResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF4B7D5143B9F92A6AB37CFE /* Build configuration list for PBXNativeTarget "PlayingCardsResources" */;
+			buildPhases = (
+				6792C558443E1374536DD125 /* Sources */,
+				E617A7740B3F01B69790A248 /* Frameworks */,
+				E08DFBE707D043B99F9F7017 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayingCardsResources;
+			productName = "PlayingCards-Swift-PlayingCards-Swift";
+			productReference = AA41B054AB17424A7CF1879B /* PlayingCardsSwift.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		B34ED48BDEA96F64358CB414 /* Pods-PlayingCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E91BD5DEB9C4D04090690F3 /* Build configuration list for PBXNativeTarget "Pods-PlayingCardsTests" */;
+			buildPhases = (
+				879BE2712980B173FBFFD184 /* Sources */,
+				51D0978BAF7FE3DFD66F6272 /* Frameworks */,
+				214EC13137C9DE4D59BCFD8E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2F513F562AEF1442DCCA3C0 /* PBXTargetDependency */,
+			);
+			name = "Pods-PlayingCardsTests";
+			productName = "Pods-PlayingCards-Swift_Tests";
+			productReference = 8B25B78FF797B7999568589E /* Pods_PlayingCardsTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA228BADA631DB950EE3E45A /* PlayingCardsSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B2E741CC90D36406A3EAC2 /* Build configuration list for PBXNativeTarget "PlayingCardsSwift" */;
+			buildPhases = (
+				D8CB13928C92235667EAD6F9 /* Sources */,
+				2B88AF5C0177C7D67F4D0F5D /* Frameworks */,
+				2A4E060D4CAFA15A33800FFB /* Resources */,
+				07FBCDE97F0C7DBA0982F2F6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E1C906F5401098AD5E25523 /* PBXTargetDependency */,
+			);
+			name = PlayingCardsSwift;
+			productName = "PlayingCards-Swift";
+			productReference = 1788FDC693ED97C723F844B7 /* PlayingCardsSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AC220DEBD60693B143F4FFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "PlayingCards (Swift)";
+			};
+			buildConfigurationList = 5C5EF67D06721A95B057BC9F /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 87440A63770D6C5F0306ABFA;
+			productRefGroup = 46464454E271D1F5093C828F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA228BADA631DB950EE3E45A /* PlayingCardsSwift */,
+				989D8CF8C5016ED1E8C6B51E /* PlayingCardsResources */,
+				25A2B176100FD0BC8A8E54C6 /* Pods-PlayingCardsExample */,
+				B34ED48BDEA96F64358CB414 /* Pods-PlayingCardsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A4E060D4CAFA15A33800FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E810DE8F351EF92C3EAE7625 /* PlayingCardsSwift.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E08DFBE707D043B99F9F7017 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5745342D7A210ADF670669AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08D797B47D93CD3487D15C2B /* Pods-PlayingCardsExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6792C558443E1374536DD125 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		879BE2712980B173FBFFD184 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26D457E0AC76D1DF772A4957 /* Pods-PlayingCardsTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CB13928C92235667EAD6F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F639301B43491A00A0E36A /* Suite.swift in Sources */,
+				37F639321B4349E400A0E36A /* HashUtils.swift in Sources */,
+				3791A0611B435D3A003D2A88 /* Deck.swift in Sources */,
+				571A0C2056A52BCFFE337E28 /* PlayingCardsSwift-dummy.m in Sources */,
+				2BDD769BE44AE2029711A644 /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E1C906F5401098AD5E25523 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PlayingCards-Swift-PlayingCards-Swift";
+			target = 989D8CF8C5016ED1E8C6B51E /* PlayingCardsResources */;
+			targetProxy = 7E23B32AF1D3FD031660A0C9 /* PBXContainerItemProxy */;
+		};
+		D2F513F562AEF1442DCCA3C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PlayingCards-Swift";
+			target = DA228BADA631DB950EE3E45A /* PlayingCardsSwift */;
+			targetProxy = 300D2488F57674983C448541 /* PBXContainerItemProxy */;
+		};
+		D9838FF545D6732C91E6C89B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PlayingCards-Swift";
+			target = DA228BADA631DB950EE3E45A /* PlayingCardsSwift */;
+			targetProxy = 0ACB9A43303BBA9A4C966411 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2332B601FC8843DCCE7B58E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		29D451C5252644CB3F656484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E0CA3970086B610C8B58930 /* PlayingCardsSwift-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PlayingCardsSwift/PlayingCardsSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PlayingCardsSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PlayingCardsSwift/PlayingCardsSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PlayingCardsSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		74427155167A1579862BF62B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E0CA3970086B610C8B58930 /* PlayingCardsSwift-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/PlayingCardsSwift/Info.plist";
+				PRODUCT_NAME = PlayingCardsSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9D945FFB3DCF6268A1C1FB66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E7C86E7922396A452186AD7 /* Pods-PlayingCardsTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PlayingCardsTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PlayingCardsTests/Pods-PlayingCardsTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PlayingCardsTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A629BDFF8FD94BE8AE728A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40C3EDCC7BE139A639AB39AA /* Pods-PlayingCardsTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PlayingCardsTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PlayingCardsTests/Pods-PlayingCardsTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PlayingCardsTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BCCED9C9876E1124C2159DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDB3F5A9BFF2CAB9EA403C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DB4E36EC43CE62567281143 /* Pods-PlayingCardsExample.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PlayingCardsExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PlayingCardsExample/Pods-PlayingCardsExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PlayingCardsExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1764C09C4E47332BB3E48D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4317F37421043126155B1450 /* Pods-PlayingCardsExample.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PlayingCardsExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PlayingCardsExample/Pods-PlayingCardsExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PlayingCardsExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CCB4952A377613398A5A72CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E0CA3970086B610C8B58930 /* PlayingCardsSwift-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/PlayingCardsSwift/Info.plist";
+				PRODUCT_NAME = PlayingCardsSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		EC077C7808EB80EA042DC46A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E0CA3970086B610C8B58930 /* PlayingCardsSwift-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PlayingCardsSwift/PlayingCardsSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PlayingCardsSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PlayingCardsSwift/PlayingCardsSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PlayingCardsSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27B2E741CC90D36406A3EAC2 /* Build configuration list for PBXNativeTarget "PlayingCardsSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D451C5252644CB3F656484 /* Debug */,
+				EC077C7808EB80EA042DC46A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C5EF67D06721A95B057BC9F /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2332B601FC8843DCCE7B58E9 /* Debug */,
+				BCCED9C9876E1124C2159DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E91BD5DEB9C4D04090690F3 /* Build configuration list for PBXNativeTarget "Pods-PlayingCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D945FFB3DCF6268A1C1FB66 /* Debug */,
+				A629BDFF8FD94BE8AE728A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF4B7D5143B9F92A6AB37CFE /* Build configuration list for PBXNativeTarget "PlayingCardsResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74427155167A1579862BF62B /* Debug */,
+				CCB4952A377613398A5A72CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC39D24C12FDD15599AD6D44 /* Build configuration list for PBXNativeTarget "Pods-PlayingCardsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDB3F5A9BFF2CAB9EA403C63 /* Debug */,
+				C1764C09C4E47332BB3E48D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AC220DEBD60693B143F4FFB /* Project object */;
+}

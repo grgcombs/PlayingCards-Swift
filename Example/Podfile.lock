@@ -1,0 +1,14 @@
+PODS:
+  - PlayingCards-Swift (0.1.0)
+
+DEPENDENCIES:
+  - PlayingCards-Swift (from `../`)
+
+EXTERNAL SOURCES:
+  PlayingCards-Swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PlayingCards-Swift: 42edff540aceaeab6f6d080edb35e52ca5ac1ed8
+
+COCOAPODS: 0.38.0.beta.1

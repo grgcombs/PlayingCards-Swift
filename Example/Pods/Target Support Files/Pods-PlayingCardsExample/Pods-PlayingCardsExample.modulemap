@@ -1,0 +1,6 @@
+framework module Pods_PlayingCardsExample {
+  umbrella header "Pods-PlayingCardsExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

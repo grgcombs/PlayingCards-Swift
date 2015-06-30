@@ -1,0 +1,7 @@
+#include "PlayingCardsSwift.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/PlayingCardsSwift" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/PlayingCardsSwift"
+OTHER_LDFLAGS = -ObjC
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

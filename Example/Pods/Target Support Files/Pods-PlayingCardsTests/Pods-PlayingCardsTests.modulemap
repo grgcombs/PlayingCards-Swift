@@ -1,0 +1,6 @@
+framework module Pods_PlayingCardsTests {
+  umbrella header "Pods-PlayingCardsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

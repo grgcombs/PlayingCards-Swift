@@ -1,0 +1,6 @@
+framework module PlayingCardsSwift {
+  umbrella header "PlayingCardsSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
