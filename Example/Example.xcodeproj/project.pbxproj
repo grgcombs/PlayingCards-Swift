@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		086A7A5D697589CAD634811F /* Pods_PlayingCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416E2C1D77BC0D043368BAA6 /* Pods_PlayingCardsTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37A003881B442FAA00B48D48 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A003871B442FAA00B48D48 /* DeckTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1E1CD01874DC79868949F89E /* Pods-PlayingCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingCardsTests/Pods-PlayingCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37A003871B442FAA00B48D48 /* DeckTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
 		38A2B014AD607200ECA995C1 /* Pods-PlayingCardsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingCardsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingCardsExample/Pods-PlayingCardsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		416E2C1D77BC0D043368BAA6 /* Pods_PlayingCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayingCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* PlayingCardsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayingCardsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,8 +94,8 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for PlayingCards-Swift */,
+				607FACF51AFB993E008FA782 /* Podspec */,
+				607FACD21AFB9204008FA782 /* Example App */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				3A7B43BCA49CBE73206F85BF /* Pods */,
@@ -110,7 +112,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for PlayingCards-Swift */ = {
+		607FACD21AFB9204008FA782 /* Example App */ = {
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -120,7 +122,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for PlayingCards-Swift";
+			name = "Example App";
 			path = "PlayingCards-Swift";
 			sourceTree = "<group>";
 		};
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* CardTests.swift */,
+				37A003871B442FAA00B48D48 /* DeckTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -149,14 +152,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+		607FACF51AFB993E008FA782 /* Podspec */ = {
 			isa = PBXGroup;
 			children = (
 				853EAE3ABC1121582D2150B7 /* PlayingCards-Swift.podspec */,
 				EE7CD1BFEAB3FAEA5513B0A6 /* README.md */,
 				C66B07ADBC196A58AD275A44 /* LICENSE */,
 			);
-			name = "Podspec Metadata";
+			name = Podspec;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +212,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "PlayingCards (Swift)";
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A003881B442FAA00B48D48 /* DeckTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -475,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

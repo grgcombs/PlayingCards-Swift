@@ -21,7 +21,7 @@ public struct Card : Hashable {
         }
     }
 
-    init(suite: SuiteType, type: CardType) {
+    public init(suite: SuiteType, type: CardType) {
         suiteType = suite;
         cardType = type;
         name = type.name();

@@ -18,7 +18,7 @@ public struct Suite : Hashable {
         return HashUtils.compositeHash([suiteType.hashValue, cardCount.hashValue]);
     }
 
-    init(type: SuiteType) {
+    public init(type: SuiteType) {
         suiteType = type;
         name = type.name();
         color = type.color();

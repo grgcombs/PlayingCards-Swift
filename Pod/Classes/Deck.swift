@@ -43,7 +43,7 @@ public class Deck {
     private var _cards: [Card];
     private var _currentIndex: Int = 0;
 
-    init() {
+    public init() {
         var tempSuites : [Suite] = [];
         var tempCards : [Card] = [];
         tempCards.reserveCapacity(cardCount);
