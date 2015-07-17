@@ -1,9 +1,8 @@
 //
 //  DeckTests.swift
-//  Example
+//  PlayingCards (Swift)
 //
 //  Created by Gregory Combs on 7/1/15.
-//  Copyright (c) 2015 PlayingCards (Swift). All rights reserved.
 //
 
 import UIKit;
@@ -27,47 +26,52 @@ class DeckTests: XCTestCase {
         let suites = deck.suites;
         XCTAssertEqual(suites.count, 4, "Deck should have 4 suites");
 
-        let unshuffledCards = deck.cards();
+        let unshuffledCards = deck.cards;
         XCTAssertEqual(deck.cardCount, 52, "Deck should advertise that it has 52 cards");
         XCTAssertEqual(unshuffledCards.count, 52, "Deck should have 52 cards");
 
-        XCTAssertFalse(deck.isShuffled(), "A fresh deck should not be shuffled");
+        XCTAssertFalse(deck.isShuffled, "A fresh deck should not be shuffled");
+    }
+
+    func cardArraysAreEqual(deckCards1:[Card], deckCards2: [Card]) -> Bool {
+        let fastEqual = deckCards1 == deckCards2;
+
+        var contentsEqual = true;
+        for (var i = 0; (i < deckCards1.count && i < deckCards2.count); i++) {
+            let card1 = deckCards1[i];
+            let card2 = deckCards2[i];
+            if (card1.hashValue != card2.hashValue ||
+                card1 != card2)
+            {
+                contentsEqual = false;
+                break;
+            }
+        }
+
+        XCTAssertTrue(fastEqual == contentsEqual, "The simple '==' comparison should have the same result as a comparison of all the card hashes");
+
+        return contentsEqual;
     }
 
     func testDeckRandomShuffle() {
-        func cardArraysAreEqual(deckCards1:[Card], deckCards2: [Card]) -> Bool {
-            let fastEqual = deckCards1 == deckCards2;
-
-            var contentsEqual = true;
-            for (var i = 0; (i < deckCards1.count && i < deckCards2.count); i++) {
-                let card1 = deckCards1[i];
-                let card2 = deckCards2[i];
-                if (card1.hashValue != card2.hashValue ||
-                    card1 != card2)
-                {
-                    contentsEqual = false;
-                    break;
-                }
-            }
-
-            XCTAssertTrue(fastEqual == contentsEqual, "The simple '==' comparison should have the same result as a comparison of all the card hashes");
-
-            return contentsEqual;
-        }
-
         let deck = Deck();
 
-        let unshuffledCards = deck.cards();
-        XCTAssertFalse(deck.isShuffled(), "A fresh deck should be unshuffled");
+        let unshuffledCards = deck.cards;
+        let unshuffledHash = deck.hashValue;
+        XCTAssertFalse(deck.isShuffled, "A fresh deck should be unshuffled");
 
         deck.randomShuffle();
-        XCTAssertTrue(deck.isShuffled(), "Deck should be shuffled after a randomShuffle()");
+        XCTAssertTrue(deck.isShuffled, "Deck should be shuffled after a randomShuffle()");
 
-        let shuffledCards = deck.cards();
+        let shuffledCards = deck.cards;
+        let shuffledHash = deck.hashValue;
+
         XCTAssertEqual(shuffledCards.count, 52, "The shuffled deck should still have 52 cards");
 
-        let isEqual = cardArraysAreEqual(shuffledCards, unshuffledCards);
-        XCTAssertFalse(cardArraysAreEqual(shuffledCards, unshuffledCards), "Shuffled deck should not be the same as a fresh deck");
+        XCTAssertNotEqual(unshuffledHash, shuffledHash, "Deck is unchanged and after shuffling!");
+
+        let isEqual = cardArraysAreEqual(shuffledCards, deckCards2: unshuffledCards);
+        XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
     }
 
     /*
