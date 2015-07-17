@@ -61,6 +61,85 @@ public class Deck : Hashable {
         commitShuffleWithCards(cards);
     }
 
+    public func humanCutAndShuffle(iterations: Int, validate: Bool = true) {
+        assert(iterations > 0, "Must have at least 1 interation to cut and shuffle the cards");
+        if iterations <= 0 {
+            return;
+        }
+
+        func cutCards(cards: [Card], cutAt: Double = 0.5) -> (first: [Card], second: [Card]) {
+            assert(cutAt > 0.0 && cutAt < 1.0, "Invalid splitPercent (\(cutAt)), must be greater than 0.0 and less than 1.0");
+            var splitPercent = cutAt;
+            if (splitPercent <= 0.0 || splitPercent >= 1.0) {
+                splitPercent = 0.5;
+            }
+            let splitIndex = Int(floor(splitPercent * Double(cards.count)))
+            assert(cards.count > splitIndex, "Something went wrong with the card split: index=\(splitIndex); count=\(cards.count);");
+
+            let splitCard = cards[splitIndex];
+            var separated = split(cards, maxSplit:1, allowEmptySlices: false, isSeparator: {$0==splitCard});
+            // put the splitCard back into the cut since split() removed it...
+            separated[1].insert(splitCard, atIndex: 0)
+
+            let first : [Card] = Array(separated[0]);
+            let second : [Card] = Array(separated[1]);
+            return (first, second);
+        }
+
+        var cards = self.cards;
+        let startHash = validate ? Card.hashForCards(cards) : 0;
+
+        for i in 0..<iterations {
+            let cutPercent = Double(Int.random(40...60)) / 100.0;
+            let cut : (first: [Card], second: [Card]) = cutCards(cards, cutAt: cutPercent);
+            let firstCount = cut.first.count;
+            let secondCount = cut.second.count;
+            let totalCount = firstCount + secondCount;
+            
+            assert(totalCount == cardCount, "Unexpected number of cards after cardCut, got: \(totalCount); wanted:\(cardCount)");
+            if (totalCount != cardCount)
+            {
+                return;
+            }
+
+            let largerCut = (firstCount > secondCount) ? cut.first : cut.second;
+            let largerCutCount = largerCut.count;
+
+            let smallerCut = (firstCount > secondCount) ? cut.second : cut.first;
+            let smallerCutCount = smallerCut.count;
+
+            var rejoin : [Card] = Array();
+            for i in 0..<smallerCutCount {
+                let firstCard = cut.first[i];
+                let secondCard = cut.second[i];
+                rejoin.extend([firstCard,secondCard]);
+            }
+
+            // If the cuts were unevenly divided (likely), our rejoin is incomplete
+            let remainingCount = cardCount - rejoin.count;
+            if (remainingCount > 0)
+            {
+                let offset = largerCutCount - remainingCount;
+                let remaining = largerCut[offset..<largerCutCount];
+                rejoin.extend(remaining)
+            }
+            cards = rejoin;
+        }
+
+        if validate {
+            assert(isCompleteAndValidDeck(cards), "The shuffled array of cards is invalid");
+
+            let endHash = Card.hashForCards(cards);
+
+            assert(startHash != endHash, "The deck of cards was not shuffled!");
+            if startHash == endHash {
+                return;
+            }
+        }
+
+        commitShuffleWithCards(cards);
+    }
+
     public func isCompleteAndValidDeck(cards : [Card]) -> Bool {
         if cards.count != cardCount {
             return false;

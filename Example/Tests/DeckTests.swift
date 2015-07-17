@@ -74,13 +74,41 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
     }
 
-    /*
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    */
-}
+    func testDeckHumanShuffleOnce() {
+        let deck = Deck();
 
+        let unshuffledCards = deck.cards;
+        let unshuffledHash = deck.hashValue;
+        XCTAssertFalse(deck.isShuffled, "A fresh deck should be unshuffled");
+
+        deck.humanCutAndShuffle(1, validate: false);
+        XCTAssertTrue(deck.isShuffled, "A shuffled deck should be shuffled!");
+
+        let shuffledCards = deck.cards;
+        let shuffledHash = deck.hashValue;
+
+        XCTAssertNotEqual(unshuffledHash, shuffledHash, "Deck is unchanged and after shuffling!");
+
+        let isEqual = cardArraysAreEqual(shuffledCards, deckCards2: unshuffledCards);
+        XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
+    }
+
+    func testDeckHumanShuffleMany() {
+        let deck = Deck();
+
+        let unshuffledCards = deck.cards;
+        let unshuffledHash = deck.hashValue;
+        XCTAssertFalse(deck.isShuffled, "A fresh deck should be unshuffled");
+
+        deck.humanCutAndShuffle(10, validate: false);
+        XCTAssertTrue(deck.isShuffled, "A shuffled deck should be shuffled!");
+
+        let shuffledCards = deck.cards;
+        let shuffledHash = deck.hashValue;
+
+        XCTAssertNotEqual(unshuffledHash, shuffledHash, "Deck is unchanged and after shuffling!");
+
+        let isEqual = cardArraysAreEqual(shuffledCards, deckCards2: unshuffledCards);
+        XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
+    }
+}
