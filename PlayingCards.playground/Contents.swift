@@ -244,3 +244,27 @@ println("Number of cards in deck: \(deck.cardCount)");
 
 testDeckCardEquality(shuffledCards, unshuffledCards);
 
+let char : Character = "\u{1f0a1}";
+
+var strings : [String] = [];
+/*
+let startCode : Character = "\u{1F0A1}";
+let endCode : Character = "\u{1F0AE}";
+for code in startCode...endCode {
+    println("code: \(code)");
+}*/
+
+let aceCode = 0x1F0A1;
+let kingCode = 0x1F0AE;
+let knightCode = 0x1F0AC;
+
+for code in startCode...endCode {
+    if code == knightCode {
+        continue;
+    }
+
+    let scalar = UnicodeScalar(code);
+    let char = Character(scalar);
+    println("char = \(char)");
+}
+

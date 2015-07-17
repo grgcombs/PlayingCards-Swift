@@ -1,6 +1,6 @@
 # Playing Cards (Swift)
 
-[![CI Status](http://img.shields.io/travis/Greg Combs/PlayingCards-Swift.svg?style=flat)](https://travis-ci.org/Greg Combs/PlayingCards-Swift)
+[![CI Status](http://img.shields.io/travis/grgcombs/PlayingCards-Swift.svg?style=flat)](https://travis-ci.org/grgcombs/PlayingCards-Swift)
 [![Version](https://img.shields.io/cocoapods/v/PlayingCards-Swift.svg?style=flat)](http://cocoapods.org/pods/PlayingCards-Swift)
 
 This project is an exploration of the data structures and syntax of the Swift language. Anyone and everyone is welcome to participate in this exploration.  This is social coding, after all.
@@ -14,7 +14,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-Xcode 6.3 or newer.
+Xcode 6.4 or newer.
 
 ## Installation
 
