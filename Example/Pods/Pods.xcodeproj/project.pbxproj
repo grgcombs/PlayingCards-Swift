@@ -13,6 +13,8 @@
 		26D457E0AC76D1DF772A4957 /* Pods-PlayingCardsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F291CD12DDAC483A2325B /* Pods-PlayingCardsTests-dummy.m */; };
 		2BDD769BE44AE2029711A644 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24E03E97CA8F1B319AA7E5 /* Card.swift */; };
 		368682A96485114C334B46B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7AA389527D5D974AA8412E /* Foundation.framework */; };
+		370B7AAC1B586DEB0087F5BE /* DeckMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B7AAB1B586DEB0087F5BE /* DeckMirror.swift */; };
+		375B7AAA1B57FB040077B297 /* CardMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B7AA91B57FB040077B297 /* CardMirror.swift */; };
 		3788C69F1B5554380093CBB9 /* OptionalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788C69E1B5554380093CBB9 /* OptionalUtils.swift */; };
 		3788C6A11B555FA50093CBB9 /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788C6A01B555FA50093CBB9 /* RandomNumber.swift */; };
 		3791A0611B435D3A003D2A88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791A0601B435D3A003D2A88 /* Deck.swift */; };
@@ -58,6 +60,8 @@
 		1788FDC693ED97C723F844B7 /* PlayingCardsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlayingCardsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7C86E7922396A452186AD7 /* Pods-PlayingCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlayingCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F7AA389527D5D974AA8412E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		370B7AAB1B586DEB0087F5BE /* DeckMirror.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckMirror.swift; sourceTree = "<group>"; };
+		375B7AA91B57FB040077B297 /* CardMirror.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMirror.swift; sourceTree = "<group>"; };
 		3788C69E1B5554380093CBB9 /* OptionalUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalUtils.swift; sourceTree = "<group>"; };
 		3788C6A01B555FA50093CBB9 /* RandomNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
 		3791A0601B435D3A003D2A88 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+		375B7AAB1B57FE540077B297 /* Mirrors */ = {
+			isa = PBXGroup;
+			children = (
+				375B7AA91B57FB040077B297 /* CardMirror.swift */,
+				370B7AAB1B586DEB0087F5BE /* DeckMirror.swift */,
+			);
+			name = Mirrors;
+			sourceTree = "<group>";
+		};
 		46464454E271D1F5093C828F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +254,7 @@
 				3788C69E1B5554380093CBB9 /* OptionalUtils.swift */,
 				3788C6A01B555FA50093CBB9 /* RandomNumber.swift */,
 				37F6392F1B43491A00A0E36A /* Suite.swift */,
+				375B7AAB1B57FE540077B297 /* Mirrors */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -441,7 +455,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375B7AAA1B57FB040077B297 /* CardMirror.swift in Sources */,
 				3788C6A11B555FA50093CBB9 /* RandomNumber.swift in Sources */,
+				370B7AAC1B586DEB0087F5BE /* DeckMirror.swift in Sources */,
 				37F639301B43491A00A0E36A /* Suite.swift in Sources */,
 				3788C69F1B5554380093CBB9 /* OptionalUtils.swift in Sources */,
 				37F639321B4349E400A0E36A /* HashUtils.swift in Sources */,
