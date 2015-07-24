@@ -72,6 +72,8 @@ class DeckTests: XCTestCase {
 
         let isEqual = cardArraysAreEqual(shuffledCards, deckCards2: unshuffledCards);
         XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
+
+        XCTAssertTrue(deck.isCompleteAndValidDeck(deck.cards), "Incomplete/invalid deck after shuffle");
     }
 
     func testDeckHumanShuffleOnce() {
@@ -91,6 +93,8 @@ class DeckTests: XCTestCase {
 
         let isEqual = cardArraysAreEqual(shuffledCards, deckCards2: unshuffledCards);
         XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
+
+        XCTAssertTrue(deck.isCompleteAndValidDeck(deck.cards), "Incomplete/invalid deck after shuffle");
     }
 
     func testDeckHumanShuffleMany() {
@@ -110,5 +114,7 @@ class DeckTests: XCTestCase {
 
         let isEqual = cardArraysAreEqual(shuffledCards, deckCards2: unshuffledCards);
         XCTAssertFalse(isEqual, "Shuffled deck should not be the same as a fresh deck");
+
+        XCTAssertTrue(deck.isCompleteAndValidDeck(deck.cards), "Incomplete/invalid deck after shuffle");
     }
 }

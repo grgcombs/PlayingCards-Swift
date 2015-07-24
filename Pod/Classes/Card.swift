@@ -27,7 +27,7 @@ public struct Card : Hashable {
         minPointValue = type.minPointValue;
         description = "\(type.name) of \(suite.name)";
         hashValue = HashUtils.compositeHash([suiteType.hashValue, cardType.hashValue]);
-        glyph = SharedCardGlyphsInstance.glyphForSuite(suite, cardType: type)!;
+        glyph = CardGlyphs.glyphForSuite(suite, cardType: type)!;
     }
 
     public static func descriptionsForCards(cards: [Card]) -> [String] {
@@ -74,21 +74,23 @@ public enum CardType : Int, Printable {
 
     private var pointValue : Int {
         get {
-            switch self {
-            case .Ace, .Two, .Three, .Four, .Five, .Six, .Seven, .Eight, .Nine, .Ten:
-                return rawValue;
-            case .Jack, .Queen, .King:
+            switch self.rawValue {
+            case Ten.rawValue...King.rawValue:
                 return 10;
+            default:
+                return rawValue;
             }
         }
     }
 
     public var maxPointValue : Int {
         get {
-            if (self == .Ace) {
-                return pointValue + 10;
+            switch self {
+            case .Ace:
+                return 11;
+            default:
+                return pointValue;
             }
-            return pointValue;
         }
     }
 
@@ -99,69 +101,3 @@ public enum CardType : Int, Printable {
     public static let allValues = [Ace,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Jack,Queen,King];
     public static let allNames = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
 }
-
-private struct CardGlyphs {
-    let cardGlyphs : [SuiteType : [CardType : String]];
-
-    init() {
-        let glyphTuples : [(suiteType: SuiteType, cardGlyphs: [CardType : String])];
-        glyphTuples = SuiteType.allValues.map({
-            ($0, CardGlyphs.cardGlyphsForSuite($0))
-        });
-
-        // not very FRP -- need to figure out how to clean it up or do it all in one pass above
-        var glyphs : [SuiteType : [CardType : String]] = [:];
-        for tuple in glyphTuples {
-            glyphs[tuple.suiteType] = tuple.cardGlyphs;
-        }
-        cardGlyphs = glyphs;
-    }
-
-    func glyphForSuite(suiteType:SuiteType, cardType:CardType) -> String? {
-        if let suiteGlyphs = cardGlyphs[suiteType] {
-            if let glyph = suiteGlyphs[cardType] {
-                return glyph;
-            }
-        }
-        return nil;
-    }
-
-    static func cardGlyphRangesForSuite(suite:SuiteType) -> (range: Range<Int>, exclude: Int) {
-        switch suite {
-        case .Spades:
-            return (0x1F0A1...0x1F0AE, 0x1F0AC);
-        case .Hearts:
-            return (0x1F0B1...0x1F0BE, 0x1F0BC);
-        case .Diamonds:
-            return (0x1F0C1...0x1F0CE, 0x1F0CC);
-        case .Clubs:
-            return (0x1F0D1...0x1F0DE, 0x1F0DC);
-        }
-    }
-
-    static func cardGlyphsForSuite(suite: SuiteType) -> [CardType: String] {
-        var glyphs : [CardType: String] = [:];
-        var cardTypes = EnumerateGenerator(CardType.allValues.generate())
-        let range = cardGlyphRangesForSuite(suite);
-
-        for code in range.range {
-            if code == range.exclude {
-                continue;
-            }
-
-            let scalar = UnicodeScalar(code);
-            let char = Character(scalar);
-
-            if let cardIteration : (index: Int, element: CardType) = cardTypes.next() {
-                let cardType = cardIteration.element;
-                glyphs[cardType] = "\(char)";
-            }
-            else {
-                break;
-            }
-        }
-        return glyphs;
-    }
-}
-
-private let SharedCardGlyphsInstance : CardGlyphs = CardGlyphs();

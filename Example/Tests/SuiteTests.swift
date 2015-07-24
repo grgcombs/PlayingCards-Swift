@@ -53,4 +53,22 @@ class SuiteTests: XCTestCase {
         let existingSuite : Suite? = suites[suite2.hashValue];
         XCTAssertFalse(isOptionalNil(existingSuite), "Did not find a matching suite in the suite map")
     }
+
+    func testSymbols() {
+        let suites : [Suite] = SuiteType.allValues.map({
+            Suite(type: $0);
+        });
+
+        var previousSymbol : String?;
+
+        for (i,v) in enumerate(suites) {
+            let symbol = v.symbol;
+            XCTAssertNotEqual(symbol, "", "Suite symbol should not be empty");
+
+            if previousSymbol != nil {
+                XCTAssertFalse(previousSymbol == symbol, "Found a duplicate suite symbol");
+            }
+            previousSymbol = symbol;
+        }
+    }
 }

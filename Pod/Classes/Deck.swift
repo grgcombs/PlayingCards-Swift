@@ -67,63 +67,22 @@ public class Deck : Hashable {
             return;
         }
 
-        func cutCards(cards: [Card], cutAt: Double = 0.5) -> (first: [Card], second: [Card]) {
-            assert(cutAt > 0.0 && cutAt < 1.0, "Invalid splitPercent (\(cutAt)), must be greater than 0.0 and less than 1.0");
-            var splitPercent = cutAt;
-            if (splitPercent <= 0.0 || splitPercent >= 1.0) {
-                splitPercent = 0.5;
-            }
-            let splitIndex = Int(floor(splitPercent * Double(cards.count)))
-            assert(cards.count > splitIndex, "Something went wrong with the card split: index=\(splitIndex); count=\(cards.count);");
-
-            let splitCard = cards[splitIndex];
-            var separated = split(cards, maxSplit:1, allowEmptySlices: false, isSeparator: {$0==splitCard});
-            // put the splitCard back into the cut since split() removed it...
-            separated[1].insert(splitCard, atIndex: 0)
-
-            let first : [Card] = Array(separated[0]);
-            let second : [Card] = Array(separated[1]);
-            return (first, second);
-        }
-
         var cards = self.cards;
         let startHash = validate ? Card.hashForCards(cards) : 0;
 
         for i in 0..<iterations {
+
+            // Could extend this by externalizing the cut location to other player's choice instead of random
             let cutPercent = Double(Int.random(40...60)) / 100.0;
+
             let cut : (first: [Card], second: [Card]) = cutCards(cards, cutAt: cutPercent);
-            let firstCount = cut.first.count;
-            let secondCount = cut.second.count;
-            let totalCount = firstCount + secondCount;
-            
-            assert(totalCount == cardCount, "Unexpected number of cards after cardCut, got: \(totalCount); wanted:\(cardCount)");
-            if (totalCount != cardCount)
+
+            cards = interleaveCards(cut.first, second: cut.second);
+
+            if (cards.count != cardCount)
             {
                 return;
             }
-
-            let largerCut = (firstCount > secondCount) ? cut.first : cut.second;
-            let largerCutCount = largerCut.count;
-
-            let smallerCut = (firstCount > secondCount) ? cut.second : cut.first;
-            let smallerCutCount = smallerCut.count;
-
-            var rejoin : [Card] = Array();
-            for i in 0..<smallerCutCount {
-                let firstCard = cut.first[i];
-                let secondCard = cut.second[i];
-                rejoin.extend([firstCard,secondCard]);
-            }
-
-            // If the cuts were unevenly divided (likely), our rejoin is incomplete
-            let remainingCount = cardCount - rejoin.count;
-            if (remainingCount > 0)
-            {
-                let offset = largerCutCount - remainingCount;
-                let remaining = largerCut[offset..<largerCutCount];
-                rejoin.extend(remaining)
-            }
-            cards = rejoin;
         }
 
         if validate {
@@ -145,10 +104,12 @@ public class Deck : Hashable {
             return false;
         }
 
-        var suiteMap : [SuiteType: Set<Card>] = Dictionary(minimumCapacity: suiteCount);
-        for suite in suites {
-            suiteMap[suite.suiteType] = Set(suite.cards);
-        }
+        var suiteMap : [SuiteType: Set<Card>] = suites.reduce([:], combine: {
+            var map : [SuiteType: Set<Card>] = $0;
+            let suite = $1;
+            map[suite.suiteType] = Set(suite.cards);
+            return map;
+        });
 
         for card in cards {
             if let suiteCards = suiteMap[card.suiteType] {
@@ -156,15 +117,10 @@ public class Deck : Hashable {
                     var mutableCards = suiteCards;
                     mutableCards.remove(card);
                     suiteMap[card.suiteType] = mutableCards;
-                }
-                else
-                {
-                    return false;
+                    continue;
                 }
             }
-            else {
-                return false;
-            }
+            return false;
         }
         return true;
     }
@@ -192,17 +148,15 @@ public class Deck : Hashable {
             Suite(type: $0)
         });
 
-        //var tempSuites : [Suite] = [];
-        var tempCards : [Card] = [];
-        tempCards.reserveCapacity(cardCount);
+        _cards = suites.reduce([], combine: {
+            var collection : [Card] = $0;
+            collection.extend($1.cards);
+            return collection;
+        });
 
-        for suite in suites {
-            tempCards.extend(suite.cards);
-        }
-        _cards = tempCards;
-        hashValue = Deck.getHashWithShuffled(false, cards: tempCards, index: 0);
+        hashValue = Deck.getHashWithShuffled(false, cards: _cards, index: 0);
 
-        assert(tempCards.count == cardCount, "Unexpected card count for deck");
+        assert(_cards.count == cardCount, "Unexpected card count for deck");
         assert(suites.count == suiteCount, "Unexpected suite count for deck");
     }
 
@@ -219,6 +173,61 @@ public class Deck : Hashable {
         let cardsHash = Card.hashForCards(cards);
         return HashUtils.compositeHash([isShuffled.hashValue, cardsHash, index.hashValue]);
     }
+
+    private func cutCards(cards: [Card], cutAt: Double = 0.5) -> (first: [Card], second: [Card]) {
+        assert(cutAt > 0.0 && cutAt < 1.0, "Invalid splitPercent (\(cutAt)), must be greater than 0.0 and less than 1.0");
+        var splitPercent = cutAt;
+        if (splitPercent <= 0.0 || splitPercent >= 1.0) {
+            splitPercent = 0.5;
+        }
+        let splitIndex = Int(floor(splitPercent * Double(cards.count)))
+        assert(cards.count > splitIndex, "Something went wrong with the card split: index=\(splitIndex); count=\(cards.count);");
+
+        let splitCard = cards[splitIndex];
+        var separated = split(cards, maxSplit:1, allowEmptySlices: false, isSeparator: {$0==splitCard});
+        // put the splitCard back into the cut since split() removed it...
+        separated[1].insert(splitCard, atIndex: 0)
+
+        let first : [Card] = Array(separated[0]);
+        let second : [Card] = Array(separated[1]);
+        return (first, second);
+    }
+
+    private func interleaveCards(first: [Card], second: [Card]) -> [Card] {
+        let firstCount = first.count;
+        let secondCount = second.count;
+        let totalCount = firstCount + secondCount;
+
+        assert(totalCount == cardCount, "Unexpected number of cards after cardCut, got: \(totalCount); wanted:\(cardCount)");
+        if (totalCount != cardCount)
+        {
+            return [];
+        }
+
+        let largerCut = (firstCount > secondCount) ? first : second;
+        let largerCutCount = largerCut.count;
+
+        let smallerCut = (firstCount > secondCount) ? second : first;
+        let smallerCutCount = smallerCut.count;
+
+        var rejoin : [Card] = Array();
+        for i in 0..<smallerCutCount {
+            let firstCard = first[i];
+            let secondCard = second[i];
+            rejoin.extend([firstCard,secondCard]);
+        }
+
+        // If the cuts were unevenly divided (likely), our rejoin is incomplete
+        let remainingCount = cardCount - rejoin.count;
+        if (remainingCount > 0)
+        {
+            let offset = largerCutCount - remainingCount;
+            let remaining = largerCut[offset..<largerCutCount];
+            rejoin.extend(remaining)
+        }
+       return rejoin;
+    }
+
 }
 
 public func ==(lhs: Deck, rhs: Deck) -> Bool {

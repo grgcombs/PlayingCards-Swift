@@ -64,4 +64,14 @@ class CardTests: XCTestCase {
         }
         XCTAssertEqual(cards.count, 52, "Should have exactly 52 cards across all 4 suites");
     }
+
+    func testCardsHaveGlyphs() {
+        for (sIndex : Int, suite : SuiteType) in enumerate(SuiteType.allValues) {
+            for (cIndex : Int, type : CardType) in enumerate(CardType.allValues) {
+                let card = Card(suite: suite, type: type);
+                let glyph = card.glyph;
+                XCTAssertNotEqual(glyph, "", "Should have a non-empty glyph string for card: \(card)");
+            }
+        }
+    }
 }
