@@ -8,7 +8,7 @@
 import UIKit;
 
 public struct Card : Hashable {
-    public let suiteType: SuiteType;
+    public let suiteType: SuitType;
     public let cardType: CardType;
     public let name: String;
     public let color: UIColor;
@@ -18,16 +18,16 @@ public struct Card : Hashable {
     public let minPointValue: Int;
     public let hashValue: Int;
 
-    public init(suite: SuiteType, type: CardType) {
-        suiteType = suite;
+    public init(suit: SuitType, type: CardType) {
+        suiteType = suit;
         cardType = type;
         name = type.name;
-        color = suite.color;
+        color = suit.color;
         maxPointValue = type.maxPointValue;
         minPointValue = type.minPointValue;
-        description = "\(type.name) of \(suite.name)";
+        description = "\(type.name) of \(suit.name)";
         hashValue = HashUtils.compositeHash([suiteType.hashValue, cardType.hashValue]);
-        glyph = CardGlyphs.glyphForSuite(suite, cardType: type)!;
+        glyph = CardGlyphs.glyphForSuit(suit, cardType: type)!;
     }
 
     public static func descriptionsForCards(cards: [Card]) -> [String] {

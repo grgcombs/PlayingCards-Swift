@@ -1,5 +1,5 @@
 //
-//  Suite.swift
+//  Suit.swift
 //  PlayingCards (Swift)
 //
 //  Created by Gregory Combs on 6/30/15.
@@ -8,8 +8,8 @@
 
 import UIKit;
 
-public struct Suite : Hashable, Printable {
-    public let suiteType: SuiteType;
+public struct Suit : Hashable, Printable {
+    public let suiteType: SuitType;
     public let name: String;
     public let color: UIColor;
     public let symbol: String;
@@ -19,17 +19,17 @@ public struct Suite : Hashable, Printable {
         return HashUtils.compositeHash([suiteType.hashValue]);
     }
 
-    public init(type: SuiteType) {
+    public init(type: SuitType) {
         suiteType = type;
         name = type.name;
         color = type.color;
         symbol = type.symbol;
 
         cards = CardType.allValues.map({
-            Card(suite: type, type: $0)
+            Card(suit: type, type: $0)
         });
 
-        assert(cards.count == cardCount, "Unexpected card count for suite \(name)");
+        assert(cards.count == cardCount, "Unexpected card count for suit \(name)");
     }
 
     public var description: String {
@@ -39,11 +39,11 @@ public struct Suite : Hashable, Printable {
     }
 }
 
-public func ==(lhs: Suite, rhs: Suite) -> Bool {
+public func ==(lhs: Suit, rhs: Suit) -> Bool {
     return (lhs.suiteType == rhs.suiteType);
 }
 
-public enum SuiteType : Int, Printable {
+public enum SuitType : Int, Printable {
     case Hearts = 0, Diamonds, Clubs, Spades;
 
     public var color : UIColor {
@@ -59,8 +59,8 @@ public enum SuiteType : Int, Printable {
 
     public var name : String {
         get {
-            assert(SuiteType.allNames.count > self.rawValue , "Mismatch in SuiteType length versus allNames length");
-            return SuiteType.allNames[self.rawValue];
+            assert(SuitType.allNames.count > self.rawValue , "Mismatch in SuitType length versus allNames length");
+            return SuitType.allNames[self.rawValue];
         }
     }
 
@@ -72,8 +72,8 @@ public enum SuiteType : Int, Printable {
 
     public var symbol : String {
         get {
-            assert(SuiteType.allSymbols.count > self.rawValue , "Mismatch in SuiteType length versus allSymbols length");
-            return SuiteType.allSymbols[self.rawValue];
+            assert(SuitType.allSymbols.count > self.rawValue , "Mismatch in SuitType length versus allSymbols length");
+            return SuitType.allSymbols[self.rawValue];
         }
     }
 

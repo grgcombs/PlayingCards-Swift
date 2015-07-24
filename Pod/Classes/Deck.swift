@@ -8,7 +8,7 @@
 import Foundation
 
 public class Deck : Hashable {
-    public let suites: [Suite];
+    public let suites: [Suit];
     public let cardCount: Int = 52;
     public let suiteCount: Int = 4;
     public var hashValue: Int;
@@ -104,10 +104,10 @@ public class Deck : Hashable {
             return false;
         }
 
-        var suiteMap : [SuiteType: Set<Card>] = suites.reduce([:], combine: {
-            var map : [SuiteType: Set<Card>] = $0;
-            let suite = $1;
-            map[suite.suiteType] = Set(suite.cards);
+        var suiteMap : [SuitType: Set<Card>] = suites.reduce([:], combine: {
+            var map : [SuitType: Set<Card>] = $0;
+            let suit = $1;
+            map[suit.suiteType] = Set(suit.cards);
             return map;
         });
 
@@ -144,8 +144,8 @@ public class Deck : Hashable {
     private var _currentIndex: Int = 0;
 
     public init() {
-        suites = SuiteType.allValues.map({
-            Suite(type: $0)
+        suites = SuitType.allValues.map({
+            Suit(type: $0)
         });
 
         _cards = suites.reduce([], combine: {
@@ -157,7 +157,7 @@ public class Deck : Hashable {
         hashValue = Deck.getHashWithShuffled(false, cards: _cards, index: 0);
 
         assert(_cards.count == cardCount, "Unexpected card count for deck");
-        assert(suites.count == suiteCount, "Unexpected suite count for deck");
+        assert(suites.count == suiteCount, "Unexpected suit count for deck");
     }
 
     internal func commitShuffleWithCards(cards: [Card]) {

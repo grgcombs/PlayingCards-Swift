@@ -9,11 +9,11 @@
 import Foundation
 
 internal typealias CardGlyphMap = [CardType : String];
-internal typealias SuiteGlyphMap = [SuiteType : CardGlyphMap];
+internal typealias SuitGlyphMap = [SuitType : CardGlyphMap];
 
 internal class CardGlyphs {
 
-    static func glyphForSuite(suiteType:SuiteType, cardType:CardType) -> String? {
+    static func glyphForSuit(suiteType:SuitType, cardType:CardType) -> String? {
         if let glyphs = SharedCardGlyphs.cardGlyphs[suiteType] ?? nil {
             return glyphs[cardType] ?? nil;
         }
@@ -31,23 +31,23 @@ private let SharedCardGlyphs : CardGlyphsPrivate = CardGlyphsPrivate();
 private class CardGlyphsPrivate {
 
     init() {
-        var emptyMap : SuiteGlyphMap = [:];
+        var emptyMap : SuitGlyphMap = [:];
 
-        cardGlyphs = SuiteType.allValues.map({
+        cardGlyphs = SuitType.allValues.map({
             ($0, $0.cardGlyphMap)
         }).reduce(emptyMap, combine: {
-            var map : SuiteGlyphMap = $0;
+            var map : SuitGlyphMap = $0;
             let tuple : GlyphTuple = $1;
             map[tuple.suiteType] = tuple.cardGlyphs;
             return map;
         });
     }
 
-    private typealias GlyphTuple = (suiteType: SuiteType, cardGlyphs: CardGlyphMap);
-    private let cardGlyphs : SuiteGlyphMap;
+    private typealias GlyphTuple = (suiteType: SuitType, cardGlyphs: CardGlyphMap);
+    private let cardGlyphs : SuitGlyphMap;
 }
 
-private extension SuiteType {
+private extension SuitType {
 
     private typealias IndexedCardTypeTuple = (index: Int, element: CardType);
     private typealias RangeWithExclusion = (range: Range<Int>, exclude: Int);
